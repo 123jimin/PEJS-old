@@ -1,2 +1,44 @@
-This is my(123jimin or JiminP) private repository, attempting to solve PE problems (http://projecteuler.net/problems) with Google Chrome debugging console only.
-You 'can' read my JS codes, but you MAY NOT read my JS codes, until you already solved corresponding problem.
+      PLEASE SOLVE PE PROBLEMS BY CODING YOURSELF, NOT JUST RUNNING THESE CODES!!
+
+----------------------------------------------------------------------------------------
+
+ This is my(123jimin or JiminP) private repository, attempting to solve PE problems
+(http://projecteuler.net/problems), with Google Chrome debugging console only.
+Which means, all JS codes in this repository can be executed successfully by typing
+the source code to the console (F12 or Ctrl+Shift+I) directly.
+ 
+ If you found this repository, then you are probably in one of four categories.
+I made this repository because of second kinds of people.
+
+
+ 1. You didn't solve some PE problems, and want to know the answer.
+
+   - If you just want the answer to increase 'Solved' stats, then remind this sentence
+     from the PE website:
+ 
+      "If you photocopy a crossword solution then what have you achieved?"
+
+
+   - If you want what ideas I used to solve the puzzle, these codes may not help you
+     a lot. Because, since I wrote most of these on the console, most of codes are
+     quite hard to read, and there's no explanation about codes.
+
+
+ 2. You solved PE problems what these codes provide answers, and are curious how
+    problems can be solved using JS only.
+
+   - Well, then feel free to read my codes. However, I have no responsibility
+     if your brain is exploded because of my dirty, dirty codes.
+
+
+ 3. You think this repository is not OK and should be removed, because I am
+    uploading answers of PE to the internet.
+
+   - If this README file and the name of the only folder on here is not enough, then
+     notice your opinion to me. I will delete this repository if more than two people
+     hate this.
+
+
+ 4. You are just a random guy.
+
+   - Hello!
