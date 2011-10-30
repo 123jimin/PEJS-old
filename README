@@ -6,7 +6,7 @@
 (http://projecteuler.net/problems), with Google Chrome debugging console only.
 Which means, all JS codes in this repository can be executed successfully by typing
 the source code to the console (F12 or Ctrl+Shift+I) directly.
- All source codes are written by me, unless mentioned in the source code.
+ All source codes are written by me, unless other things are mentioned in the source code.
  
  If you found this repository, then you are probably in one of four categories.
 I made this repository because of second kinds of people.
