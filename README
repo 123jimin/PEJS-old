@@ -13,7 +13,7 @@ the source code to the console (F12 or Ctrl+Shift+I) directly.
 
   * Most codes are shortened very much (no comments, names of variables are shortened, abused
   for loops and '?:'s, ...), so they are hard to read.
-  * Except few exceptions like 052.js, almost all codes actually calculate codes.
+  * Except few exceptions like 052.js, almost all codes actually calculate answeres.
   * Some of them includes HUGE text data, like 062.js. I used gedit to automatically convert
   raw text datas to usable datas. Just change several times something like '\n to "],\n["'.
   * All source codes are written by me, unless other things are mentioned in the source code.
