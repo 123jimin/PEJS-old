@@ -14,7 +14,7 @@ function ds(s){
   for(var i=0,n=0;i<s.length;i++) n+=~~s[i]; return n;
 }
 function pow(a,b){
-  for(var s=''+a,i=0;i<b;i++) s=pd(s,''+a);
+  for(var s=''+a,i=0;i<b-1;i++) s=pd(s,''+a);
   return s;
 }
 function p(a,b){
