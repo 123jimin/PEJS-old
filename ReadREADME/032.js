@@ -7,7 +7,7 @@ function isO(s){
   for(i=0;i<10;i++) if(a[i]!=0) return false; return true;
 }
 var d1,d2,d3,d4,d5,a={},i,j=0;
-//4*1=4
+//4*1=4 - this type doesn't exist actually.
 for(d1=1;d1<10;d1++) if(diff(d1))
 for(d2=0;d2<10;d2++) if(diff(d2,d1))
 for(d3=0;d3<10;d3++) if(diff(d3,d2,d1))
