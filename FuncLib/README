@@ -1,5 +1,5 @@
 FuncLibs are list of useful function used to solve PE problems.
 Those files are just lists, and NOT included by other codes.
-(All codes are independent)
+(All each JS files are independent)
 
 You can use those files when you try to solve a PE problem :)
