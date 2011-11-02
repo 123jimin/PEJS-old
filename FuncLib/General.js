@@ -110,7 +110,7 @@ function strProd(a,b){
   if(a.length+b.length<10) return ''+a*b;
   else return strPlus(strProd(a,b.slice(0,b.length-1))+'0',prodDigit(a,~~b[b.length-1]));
 }
-function pow(a,b){
+function strPow(a,b){
   if(b==0) return '1';
   if(b==1) return a;
   b--;
