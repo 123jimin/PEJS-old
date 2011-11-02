@@ -93,7 +93,7 @@ function strMinus(a,b){
     if((r=~~a[i]-~~b[i]-c)<0){c=1;r+=10;}else c=0;
     s=r+s;
   }
-  return s;
+  return s.replace(/^(0+)/,'');
 }
 function prodDigit(a,d){
   if(d==0) return '0'; if(d==1) return a;
