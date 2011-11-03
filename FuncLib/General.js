@@ -4,7 +4,7 @@ function isPrime(n){
   var p=5; while(p*p<=n) if(n%p==0||n%(p+2)==0) return false; else p+=6;
   return true;
 }
-var eulerPhiTable={};
+var eulerPhiTable=[];
 function eulerPhi(n){
   if(n<3) return 1;
   if(n==3) return 2;
