@@ -58,9 +58,19 @@ function numDivisors(n){
   for(i in a) x*=a[i];
   return x;
 }
+function radical(n){
+  if(n<4) return n; var a=1;
+  if(n%2==0){a=2;while(n%2==0)n/=2;}
+  if(n%3==0){a*=3;while(n%3==0)n/=3;}
+  var p=5;
+  while(p<=n){
+    if(n%p==0){a*=p;while(n%p==0)n/=p;}
+    p+=(p%6==1?4:2);
+  }
+  return a;
+}
 function numFactors(n){
-  if(n<4) return 1;
-  var a=0;
+  if(n<4) return 1; var a=0;
   if(n%2==0){a=1;while(n%2==0)n/=2;}
   if(n%3==0){a++;while(n%3==0)n/=3;}
   var p=5;
