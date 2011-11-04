@@ -28,7 +28,7 @@ function simpQS(n){
   }
 }
 function solvePell(D){
-  if(Math.sqrt(D)==D) return false;
+  if(~~Math.sqrt(D)==Math.sqrt(D)) return false;
   if(D==2) return [3,2];
   if(D==3) return [2,1];
   var a=[0,1,D,1],b,p=[0,1,iQS(a)],q=[1,0,1],pn=p[p.length-1],qn=0,pl;
