@@ -1,4 +1,4 @@
-for(var s='UDDDUdddDDUDDddDdDddDDUDDdUUDd',i=0,n=1,m;i<s.length;i++){
+for(var s='UDDDUdddDDUDDddDdDddDDUDDdUUDd',i=0,n=1,p=Math.pow(3,s.length),m;i<s.length;i++){
   switch(s[s.length-1-i]){
     case 'D': n*=3; break;
     case 'd':
@@ -19,6 +19,5 @@ for(var s='UDDDUdddDDUDDddDdDddDDUDDdUUDd',i=0,n=1,m;i<s.length;i++){
       break;
   }
 }
-n+=Math.pow(3,s.length)*~~(Math.pow(10,15)/Math.pow(3,s.length));
-while(n-Math.pow(3,s.length)>Math.pow(10,15)) n-=Math.pow(3,s.length);
+n+=p*~~(Math.pow(10,15)/p); while(n-p>Math.pow(10,15)) n-=p;
 console.log(n);
