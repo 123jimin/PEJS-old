@@ -27,8 +27,10 @@ function eulerPhi(n){
   eulerPhiTable[n] = retValue; return retValue;
 }
 function factors(n){
-  if(n<4) return {n:1};
   var a={};
+  if(n<4){
+    a[n]=1; return a;
+  }
   if(n%2==0){a[2]=0;while(n%2==0){a[2]++;n/=2;}}
   if(n%3==0){a[3]=0;while(n%3==0){a[3]++;n/=3;}}
   var p=5;
