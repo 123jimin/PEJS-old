@@ -1,5 +1,10 @@
-FuncLibs are list of useful function used to solve PE problems.
-Those files are just lists, and NOT included by other codes.
-(All each JS files are independent)
+ FuncLibs are list of useful function used to solve PE problems.
+Those files are just lists, and NOT "included" by other codes.
+Even though some JS files contain these functions, since
+these functions are quite simple to write, it's still possible
+to write all solutions on the Google Chrome console.
+ For example, 066.js uses A LOT OF these functions to manipluate
+both quadratic surds and large integers, but it could be written
+on the console without look anything.
 
 You can use those files when you try to solve a PE problem :)
