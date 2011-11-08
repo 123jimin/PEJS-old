@@ -31,15 +31,23 @@ function solvePell(D){
   if(~~Math.sqrt(D)==Math.sqrt(D)) return false;
   if(D==2) return [3,2];
   if(D==3) return [2,1];
-  var a=[0,1,D,1],b,p=[0,1,iQS(a)],q=[1,0,1],pn=p[p.length-1],qn=0,pl;
-  a=aQS(a,-p[p.length-1]);
-  while(pn*pn-D*qn*qn!=1){
+  var a=[0,1,D,1],b,c=[],d=[]
+     ,p=[~~Math.sqrt(D)],q=[1],pn,qn;
+  a=aQS(a,-iQS(a));
+  while(c.indexOf(a.join(','))==-1){
+    c.push(a.join(','));
     a=rvQS(a);
     b=iQS(a);
-    pl=p.length;
-    pn=p[pl]=b*p[pl-1]+p[pl-2];
-    qn=q[pl]=b*q[pl-1]+q[pl-2];
+    d.push(b);
     a=aQS(a,-b);
+  }
+  b=1;
+  p.push(pn=p[0]*d[0]+1);
+  q.push(qn=d[0]);
+  while(pn*pn-D*qn*qn!=1){
+    p.push(pn=d[b%d.length]*p[b]+p[b-1]);
+    q.push(qn=d[b%d.length]*q[b]+q[b-1]);
+    b++;
   }
   return [pn,qn];
 }
