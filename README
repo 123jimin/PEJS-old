@@ -9,7 +9,7 @@
 Which means, all JS codes in this repository can be executed successfully by typing
 the source code to the console (F12 or Ctrl+Shift+I) directly.
 
- These codes are...
+ Features
 
   * Most codes are shortened very much (no comments, names of variables are shortened, abused
   for loops and '?:'s, ...), so they are hard to read.
