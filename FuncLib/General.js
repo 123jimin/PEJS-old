@@ -1,7 +1,24 @@
+//Traditional
 function isPrime(n){
   if(n<2) return false; if(n<4) return true;
   if(n%2==0||n%3==0) return false; if(n<25) return true;
   var p=5; while(p*p<=n) if(n%p==0||n%(p+2)==0) return false; else p+=6;
+  return true;
+}
+//Miller-Rabin (n<3e14)
+function isPrime(n){
+  if(n==2||n==3||n==5) return true;
+  if(n%2==0||n%3==0||n%5==0) return false;
+  if(n<25) return true;
+  for(var a=[2,3,5,7,11,13,17],b=n-1,d,t,i,x;b%2==0;b/=2);
+  for(i=0;i<a.length;i++){
+    x=modPow(a[i],b,n);
+    if(x==1||x==n-1) continue;
+    for(t=true,d=b;t&&d<n-1;d*=2){
+      x=modProd(x,x,n); if(x==n-1) t=false;
+    }
+    if(t) return false;
+  }
   return true;
 }
 var eulerPhiTable=[];
