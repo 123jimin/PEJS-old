@@ -1,3 +1,9 @@
+//Alexandre Marin's answer in the problem thread.
+for(var s=0,i=0,c=new Uint16Array(210),p=new Uint16Array(200);i<=200;i++) c[i]=1024;
+(function bt(q,d){if(q>200||d>c[q]) return; p[c[q]=d]=q; for(var i=d+1;i--;bt(q+p[i],d+1));}(1,0))
+for(i=1;i<=200;s+=c[i++]); console.log(s);
+/*
+
 // ~4min (VERY bad)
 function exists(a,n){
   if(a[0]==n||a[1]==n||a[2]==n||a[3]==n) return true;
@@ -25,3 +31,5 @@ for(var a=[[[1]],[[1,2]]],b,i=3,j,x,y,z,c,m,n,s=1;i<=200;i++){
   s+=c; a.push(b);
 }
 console.log(s);
+
+*/
