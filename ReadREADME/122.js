@@ -1,8 +1,9 @@
-// 222262ms (Very bad)
+// ~4min (VERY bad)
 function exists(a,n){
-  if(a.length<5) return a.indexOf(n)!=-1;
+  if(a[0]==n||a[1]==n||a[2]==n||a[3]==n) return true;
   for(var l=0,m,h=a.length;h>l+1;){
-    m=~~((l+h)/2); if(a[l]==n||a[m]==n) return true;
+    m=~~((l+h)/2);
+    if(a[m]==n) return true;
     if(a[m]>n) h=m; else l=m;
   }
   return a[l]==n||a[l+1]==n;
@@ -16,12 +17,11 @@ for(var a=[[[1]],[[1,2]]],b,i=3,j,x,y,z,c,m,n,s=1;i<=200;i++){
   for(b=[],c=99999,m=0,j=1;j*2<=i;j++){
     for(x=0;x<a[j-1].length;x++) for(y=0;y<a[i-j-1].length;y++){
       if((z=union(a[j-1][x],a[i-j-1][y]).length)<=c){
-        if(z<c) b=[];
-        c=z; b.push([j,x,y]);
+        if(z<c) b=[],c=z;
+        b.push(union(a[j-1][x],a[i-j-1][y]).concat(i));
       }
     }
   }
-  s+=c;
-  a.push(b.map(function(v){return union(a[v[0]-1][v[1]],a[i-v[0]-1][v[2]]).concat(i)}));
+  s+=c; a.push(b);
 }
 console.log(s);
