@@ -65,10 +65,11 @@ function factors(n){
   if(n%2==0){a[2]=0;while(n%2==0){a[2]++;n/=2;}}
   if(n%3==0){a[3]=0;while(n%3==0){a[3]++;n/=3;}}
   var p=5;
-  while(p<=n){
+  while(p*p<=n){
     if(n%p==0){a[p]=0;while(n%p==0){n/=p;a[p]++;}}
     p+=(p%6==1?4:2);
   }
+  if(n>1) if(a[n]) a[n]++; else a[n]=1;
   return a;
 }
 function sumDivs(n){
