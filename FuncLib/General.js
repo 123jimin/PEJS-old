@@ -121,6 +121,7 @@ function factorProduct(o1,o2){
   return o;
 }
 
+// String numerics
 function strNeg(s){
   if(s=='0') return '0';
   return s[0]=='-'?s.slice(1):'-'+s;
@@ -188,4 +189,13 @@ function strPow(a,b){
   }
   return s;
 }
-
+// Very Stupid Methods
+function strDiv(a,b){
+  if(a.length-b.length<10) return ''+Math.floor(a/b);
+  if(strCmp(b,a)) return '0';
+  for(var i=0,c=b,d;!strCmp(c,a);i++,d=c,c=prodDigit(c,2));
+  return strPlus(strPow('2',i-1),strDiv(strMinus(a,d),b));
+}
+function strMod(a,b){
+  return strMinus(a,strProd(b,strDiv(a,b)));
+}
