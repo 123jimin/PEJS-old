@@ -6,12 +6,8 @@ function d(n){
   }
   return s+1;
 }
-var a=[],i,j,f=true,s=0;
+var a=[],i,j,u=new Uint8Array(28124),s=0;
 for(i=12;i<=28123;i++) if(d(i)>i) a.push(i);
-for(i=1;i<=28123;i++){f=true;
-  for(j=0;a[j]*2<=i&&f;j++){
-    if(a.indexOf(i-a[j])>=0) f=false;
-  }
-  if(f) s+=i;
-}
-console.log(s);
+for(i=0;i<a.length;i++)
+  for(j=0;j<=i&&a[i]+a[j]<=28123;j++) u[a[i]+a[j]]=1;
+for(i=1;i<=28123;i++) if(!u[i]) s+=i; console.log(s);
