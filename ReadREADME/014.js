@@ -1,9 +1,11 @@
-function cl(n){
-  var i=0;
-  while(n!=1){
-    i++;
-    n=n%2?3*n+1:n/2;
+var u=new Uint16Array(1e6);
+function col(n){
+  for(var i=0,m=n;n!=1;){
+    if(n<1e6&&u[n]) return u[m]=u[n]+i;
+    n++; while(n%2==0) i+=2,n=(n/2)*3;
+    n--; while(n%2==0) i++,n/=2;
   }
-  return i;
+  return u[m]=i;
 }
-var n,nl=0,i,il;for(i=3;i<1000000;i+=2){if((il=cl(i))>nl){nl=il;n=i;}}console.log(n);
+for(var i=1,m=0;i<1e6;i+=2) if(col(i)>u[m]) m=i;
+console.log(m);
