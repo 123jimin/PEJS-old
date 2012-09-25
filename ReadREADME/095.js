@@ -1,17 +1,15 @@
+var v=new Uint16Array(1e6),u=new Uint32Array(1e6);
 function sumDivs(n){
-  var s=0,i=2;
+  if(n<2) return 1;
+  var x=n,s=1,t,i=3;
+  while(n%2==0) n/=2,s=2*s+1;
   while(i*i<=n){
-    if(n%i==0) if(i*i!=n) s+=i+n/i; else s+=i;
-    i++;
+    t=s; while(n%i==0) n/=i,s=i*s+t; i+=2;
   }
-  return s+1;
+  if(n>1) s*=(n+1); return s-x;
 }
-for(var i=2,s=0,c=1,h,k,x;i<1000000;i++){
-  k=i;h=[];do{h.push(k);k=sumDivs(k);}while(i<=k&&k<1000000&&h.indexOf(k)==-1);
-  if(i<=k&&k<1000000&&c<=h.length){
-    if(c<h.length-h.indexOf(k)){
-      c=h.length-h.indexOf(x=k);
-    }
-  }
+for(var i=2,j,k,l=0,m;i<1e6;i++) if(!v[i]){
+  for(j=i,k=1;j<1e6&&!v[j];j=sumDivs(j)) u[j]=i,v[j]=k++;
+  if(j<1e6&&k-v[j]>l&&u[j]==i) l=k-v[j],m=j;
 }
-console.log(x);
+console.log(m);

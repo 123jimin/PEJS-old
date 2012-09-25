@@ -6,8 +6,7 @@ function d(n){
   }
   return s+1;
 }
-var a=[],i,j,u=new Uint8Array(28124),s=0;
-for(i=12;i<=28123;i++) if(d(i)>i) a.push(i);
-for(i=0;i<a.length;i++)
-  for(j=0;j<=i&&a[i]+a[j]<=28123;j++) u[a[i]+a[j]]=1;
+var a=[],i,j,v=new Uint8Array(28124),u=new Uint8Array(28124),s=0;
+for(i=12;i<=28123;i++) if(d(i)>i) v[i]=1,a.push(i);
+for(i=12;i<=28123;i++) for(j=0;j<a.length&&a[j]<i;j++) if(v[i-a[j]]){u[i]=1;break;}
 for(i=1;i<=28123;i++) if(!u[i]) s+=i; console.log(s);

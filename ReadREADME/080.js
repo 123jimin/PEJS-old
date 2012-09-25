@@ -33,25 +33,14 @@ function prodDigit(a,d){
   }
   return c?c+s:s;
 }
-function strProd(a,b){
-  a=''+a;b=''+b;
-  if(a.length<b.length) return strProd(b,a);
-  if(b.length==1) return prodDigit(a,~~b);
-  if(a.length+b.length<10) return ''+a*b;
-  else return strPlus(strProd(a,b.slice(0,b.length-1))+'0',prodDigit(a,~~b[b.length-1]));
-}
-function nRoot(n){
-  var digit=0,s='1',t=''+n;
-  while(digit<=100){
-    while(strCmp(t,strProd(s,s))) s=strPlus(s,'1');
-    s=strMinus(s,'1')+'0';
-    t+='00';
-    digit++;
+function rootDigit(n){
+  for(var x=0,i=0,j,s='',t=n+'';i<100;i++){
+    for(j=1;;j++) if(strCmp(prodDigit(s+j,j),t)) break;
+    j--; t=strMinus(t,prodDigit(s+j,j));
+    x+=j; s=strPlus(s+j,''+j); t+='00';
   }
-  return s.slice(0,100);
+  return x;
 }
-function digSum(s){
-  for(var i=0,n=0;i<s.length;n+=~~s[i++]); return n;
-}
-for(var n=0,i=2;i<100;i++) if(~~Math.sqrt(i)!=Math.sqrt(i)) n+=digSum(nRoot(i));
-console.log(n);
+for(var i=2,j=2,k=0;i<100;i++)
+  if(i==j*j) j++; else k+=rootDigit(i);
+console.log(k);

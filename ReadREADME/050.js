@@ -1,3 +1,4 @@
+var u=new Uint8Array(1e6); u[2]=u[3]=1;
 function isPrime(n){
   if(n<2) return false;
   if(n<4) return true;
@@ -6,14 +7,13 @@ function isPrime(n){
   var p=5; while(p*p<=n) 
     if(n%p==0||n%(p+2)==0) return false; else p+=6;  
   return true;
-}for(var ps=[2,3],i=5,j,cs,ml=0,cp,pl;i<1000000;i+=(i%6==1?4:2)) if(isPrime(i)) ps.push(i);
-for(pl=ps.length,i=0;i+ml<=pl;i++){
-  for(cs=j=0;j<ml;j++) cs+=ps[i+j];
-  for(;i+j<pl&&cs<1000000;j++){
-    cs+=ps[i+j];
-    if(ps.indexOf(cs)>=0){
-      cp=cs; ml=j;
-    }
+}for(var ps=[2,3],ans,i=5,j,ml=1,cp=0,cp2;i<1e6;i+=(i%6==1?4:2))
+  if(isPrime(i)) u[i]=1,ps.push(i);
+for(i=0;i+ml<=ps.length;i++){
+  cp+=ps[i+ml-1];
+  for(cp2=cp,j=ml;i+j<ps.length&&cp2<1e6;j++){
+    cp2+=ps[i+j]; if(u[cp2]) ans=cp=cp2,ml=j+1;
   }
+  cp-=ps[i];
 }
-console.log(cp);
+console.log(ans);
