@@ -1,9 +1,9 @@
 function f(n){
-  n=''+n; for(var i=0,j=0;i<n.length;i++) j+=n[i]*n[i];
-  return j;
+  if(n<10) return n*n;
+  return f(~~(n/10))+(n%10)*(n%10);
 }
 function q(n){
   while(n!=1&&n!=89) n=f(n); return n==89;
 }
-for(var i=1,a=[0],j=0;i<=567;i++) a.push(q(i)?1:0);
+for(var i=1,a=new Uint8Array(568),j=0;i<=567;i++) if(q(i)) a[i]=1;
 for(i=1;i<10000000;i++) j+=a[f(i)]; console.log(j);
