@@ -7,8 +7,13 @@ function GCD(x,y){
 function _(x,y){
   if(x==0||y==0) return [];
   var i;
-  if(x>y) for(i=0;x>y;i++) x-=y;
-  else{i=Math.floor(y/x),y%=x}
+  if(x>y){
+    i=Math.floor(x/y);x%=y;
+    if(x==0) i--,x=y;
+  }else{
+    i=Math.floor(y/x);
+    y%=x;
+  }
   return _(x,y).concat(i);
 }
 function $(x,y){
