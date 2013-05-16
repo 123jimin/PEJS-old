@@ -9,3 +9,4 @@ function pan(l,c,x,y){
   return o[k]=pan(l-1,c-1,x,y)+pan(l-1,c+1,x,y);
 }
 for(var i=0,n=0,t;i<=9;i++) for(t=10;t<=40;t++) n+=pan(t,i,i,i);
+console.log(n);
