@@ -5,6 +5,14 @@ function isPrime(n){
   var p=5; while(p*p<=n) if(n%p==0||n%(p+2)==0) return false; else p+=6;
   return true;
 }
+// Modular inverse
+function modInv(a,m){
+  for(var x=0,y=1,u=1,v=0,k=a,b=m,q,r,o;k;){
+    r=b%k; q=(b-r)/k; o=x-u*q; n=y-v*q;
+    b=k; k=r; x=u; y=v; u=o; v=n;
+  }
+  return x%m;
+}
 //Miller-Rabin (cover all integers)
 function modProd(a,b,n){
   if(b==0) return 0;
