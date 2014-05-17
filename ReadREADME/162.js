@@ -18,7 +18,7 @@ function c(z,s,a,p,l){
   if(p) return o[k]=add(add(c(1,s,a,1,l-1),c(z,1,a,1,l-1)),add(c(z,s,1,1,l-1),mul([13,0],c(z,s,a,1,l-1))));
   return o[k]=add(add(c(0,1,0,1,l-1),c(0,0,1,1,l-1)),add(c(0,0,0,0,l-1),mul([13,0],c(0,0,0,1,l-1))));
 }
-// Wrong
+
 console.log(c(0,0,0,0,16).map(function(x){
   for(x=x.toString(16);x.length<8;x='0'+x); return x;
 }).reverse().join('').toUpperCase());
